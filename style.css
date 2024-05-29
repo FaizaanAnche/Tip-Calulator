@@ -244,6 +244,7 @@ main{
     main{
         border-radius: var(--fontSize);
         width: 80%;
+        box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.1);
     }
 
     .tip-choice{
