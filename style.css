@@ -1,0 +1,252 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono';
+    font-weight:900 !important
+}
+
+:root{
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --fontSize: 24px;
+}
+
+::placeholder{
+    color: var(--Dark-grayish-cyan);
+}
+
+body{
+    background-color: var(--Light-grayish-cyan);
+}
+
+/* -------- style classes --------- */
+
+.white{
+    color: var(--White);
+}
+
+.grey{
+    color: var(--Grayish-cyan);
+}
+
+.cyan{
+    color: var(--Strong-cyan);
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* -------- header --------- */
+
+header{
+    display: flex;
+    flex-direction: column;
+    margin: var(--fontSize) 0;
+    font-size: var(--fontSize);
+    color: var(--Very-dark-cyan);
+    letter-spacing: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------- main --------- */
+
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+    border-top-left-radius: var(--fontSize);
+    border-top-right-radius: var(--fontSize);
+    padding: var(--fontSize);
+}
+
+/* -------- main container one --------- */
+
+#main-container-one span{
+    color: var(--Dark-grayish-cyan);
+}
+
+.tip-choice{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+    margin: 10px 0 var(--fontSize) 0;
+}
+
+.custom{
+    text-align: right;
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    font-size: var(--fontSize);
+    text-align: center;
+    border-radius: 4px;
+    cursor: text;
+    border: none;
+}
+
+.percentage{
+    border: none;
+    background-color: var(--Very-dark-cyan);
+    font-size: var(--fontSize);
+    color: var(--White);
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.bill-input, .people-input{
+    position: relative;
+    margin-bottom: var(--fontSize);
+}
+
+.bill-input img, .people-input img{
+    position: absolute;
+    top:22px;
+    left:18px;
+}
+
+.bill-input input, .people-input input{
+    width: 100%;
+    padding: 6px;
+    text-align: right;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    cursor: text;
+    font-size: var(--fontSize);
+    font-family: 'Space Mono';
+}
+
+/* -------- main container two --------- */
+
+#main-container-two{
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--Very-dark-cyan);
+    padding: var(--fontSize);
+    border-radius: 10px;
+}
+
+#main-container-two-top, #main-container-two-middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--fontSize);
+}
+
+.amount{
+    font-size: var(--fontSize);
+}
+
+#reset{
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+    cursor: pointer;
+}
+
+#error-message{
+    color: orangered !important;
+}
+
+/* -------- active states --------- */
+
+#bill:focus, #people:focus{
+    outline: none !important;
+    border: 2px solid var(--Strong-cyan);
+}
+
+.percentage:hover{
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+#reset:hover{
+    background-color: var(--Very-light-grayish-cyan);
+    transition: 0.2s;
+}
+
+#reset:disabled{
+    background-color: var(--Dark-grayish-cyan);
+    cursor: not-allowed;
+}
+
+.custom.active{
+    border: 2px solid var(--Strong-cyan);
+}
+
+.percentage.active{
+    background-color: var(--Strong-cyan);
+}
+
+/* -------- media query --------- */
+
+@media only screen and (min-width:768px) {
+    main{
+        flex-direction: row;
+        width: 60%;
+    }
+
+    body{
+        height: 100vh;
+    }
+
+    #main-container-one, #main-container-two{
+        width: 50%;
+    }
+
+    #main-container-two{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-left: 20px;
+    }
+
+    #reset{
+        margin-top: 52px;
+    }
+
+    .amount span{
+        font-size: 36px;
+    }
+
+}
+
+@media only screen and (min-width:600px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main{
+        border-radius: var(--fontSize);
+        width: 80%;
+    }
+
+    .tip-choice{
+        grid-template-columns: 1fr 1fr 33%;
+    }
+}
